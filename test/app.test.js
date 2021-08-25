@@ -3,16 +3,16 @@
  */
 
 const app = require('../lib/app.js')
+let myModel = new app.Model()
 
-let myModel
 const initBeforeEach = () => {
 	beforeEach(() => {
 		myModel = new app.Model()
+		localStorage.clear()
 	})
 }
 
 describe('Model > manipulating with localStorage:', () => {
-
 	initBeforeEach()
 
 	test('getLocalStorageItems should be defined', () => {
@@ -30,4 +30,11 @@ describe('Model > manipulating with localStorage:', () => {
 
 })
 
-
+describe('Model > addNewTransaction():', () => {
+	initBeforeEach()
+	test('should give new obj', () => {
+		console.log(myModel.getLocalStorageItems()[0])
+		expect(myModel.getLocalStorageItems().length).toBe(0)
+		
+	})
+})
