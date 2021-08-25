@@ -1,19 +1,19 @@
 /**
  * @jest-environment jsdom
  */
-import { Model, View, Controller } from '../lib/app.js'
+
+const app = require('../lib/app.js')
 
 let myModel
 const initBeforeEach = () => {
 	beforeEach(() => {
-		myModel = new Model()
+		myModel = new app.Model()
 	})
 }
 
 describe('Model > manipulating with localStorage:', () => {
 
 	initBeforeEach()
-
 
 	test('getLocalStorageItems should be defined', () => {
 		const items = myModel.getLocalStorageItems()
@@ -29,3 +29,5 @@ describe('Model > manipulating with localStorage:', () => {
 	})
 
 })
+
+
