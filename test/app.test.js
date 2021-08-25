@@ -4,12 +4,15 @@
 import { Model, View, Controller } from '../lib/app.js'
 
 let myModel
+const initBeforeEach = () => {
+	beforeEach(() => {
+		myModel = new Model()
+	})
+}
 
 describe('Model > manipulating with localStorage:', () => {
 
-	beforeEach(() => {
-		myModel = new Model()	
-	})
+	initBeforeEach()
 
 
 	test('getLocalStorageItems should be defined', () => {
@@ -24,4 +27,5 @@ describe('Model > manipulating with localStorage:', () => {
 		const items = myModel.getLocalStorageItems()
 		expect(items[0]).toEqual(someObj)
 	})
+
 })
