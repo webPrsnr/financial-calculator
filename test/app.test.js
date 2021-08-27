@@ -33,11 +33,23 @@ describe('Model > manipulating with localStorage:', () => {
 describe('Model > addNewTransaction():', () => {
 	initBeforeEach()
 	test('should give new obj', () => {
-		console.log(myModel.getLocalStorageItems()[0])
 		expect(myModel.getLocalStorageItems().length).toBe(0)
 		myModel.addNewTransaction("Sell telephone", 50)
 		expect(myModel.getLocalStorageItems().length).toBe(1)
 		const expectedTransaction = {id:1, text:"Sell telephone", amount:50}
+		expect(myModel.getLocalStorageItems()[0]).toEqual(expectedTransaction)
+	})
+})
+
+describe('Model > deleteTransaction():', () => {
+	initBeforeEach()
+	test('should delete the transaction', () => {
+		myModel.addNewTransaction("Buy ice cream", -3)
+		myModel.addNewTransaction("Sell red t-shirt", 15)
+		expect(myModel.getLocalStorageItems().length).toBe(2)
+		myModel.deleteTransaction(2)
+		expect(myModel.getLocalStorageItems().length).toBe(1)
+		const expectedTransaction = {id:1, text:"Buy ice cream", amount:-3}
 		expect(myModel.getLocalStorageItems()[0]).toEqual(expectedTransaction)
 	})
 })
