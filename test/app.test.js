@@ -35,6 +35,9 @@ describe('Model > addNewTransaction():', () => {
 	test('should give new obj', () => {
 		console.log(myModel.getLocalStorageItems()[0])
 		expect(myModel.getLocalStorageItems().length).toBe(0)
-		
+		myModel.addNewTransaction("Sell telephone", 50)
+		expect(myModel.getLocalStorageItems().length).toBe(1)
+		const expectedTransaction = {id:1, text:"Sell telephone", amount:50}
+		expect(myModel.getLocalStorageItems()[0]).toEqual(expectedTransaction)
 	})
 })
