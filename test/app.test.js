@@ -53,3 +53,19 @@ describe('Model > deleteTransaction():', () => {
 		expect(myModel.getLocalStorageItems()[0]).toEqual(expectedTransaction)
 	})
 })
+
+describe('Model > calculateExpense():', () => {
+	initBeforeEach()
+	test('should calculate balance, income and expense', () => {
+		myModel.addNewTransaction("Pay day", 1000)
+		myModel.addNewTransaction("Buy glasses", -10)
+		myModel.addNewTransaction("Hot dog", -5)
+		expect(myModel.balance).toBe(985)
+		expect(myModel.income).toBe(1000)
+		expect(myModel.expense).toBe(-15)
+		myModel.deleteTransaction(2)
+		expect(myModel.balance).toBe(995)
+		expect(myModel.expense).toBe(-5)
+	})
+		
+})
