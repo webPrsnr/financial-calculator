@@ -4,12 +4,12 @@
 
 const app = require('../lib/app.js')
 let myModel = new app.Model()
-let myView = new app.View()
+//let myView = new app.View()
 
 const initBeforeEach = () => {
 	beforeEach(() => {
 		myModel = new app.Model()
-		myView = new app.View()
+		//myView = new app.View()
 		localStorage.clear()
 	})
 }
