@@ -1,13 +1,13 @@
 {
   "name": "expense-tracker",
   "version": "0.0.1",
-  "description": "",
-  "main": "index.js",
+  "description": "The app to expense the finance.",
+  "main": "./lib/app.js",
   "scripts": {
     "test": "node --experimental-vm-modules node_modules/.bin/jest",
     "start": "node ./lib/server.js"
   },
-  "author": "",
+  "author": "webPrsnr",
   "license": "ISC",
   "dependencies": {
     "jest": "^27.0.6"
