@@ -1,4 +1,4 @@
-# 💼 fiannce calculator
+# 💼 fianace calculator
 ---
 > Finance calculator - a simple app to expense the finance. 
 
